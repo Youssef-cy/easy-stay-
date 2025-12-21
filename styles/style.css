@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.vision {
+  padding: 60px;
+}
+
+/* Title */
+.vision-title {
+  font-size: 48px;
+  color: #c9b16d;
+  margin-bottom: 80px;
+  padding-left: 120px;
+}
+
+/* Wrapper */
+.vision-wrapper {
+  position: relative;
+}
+
+/* Image */
+.vision-image {
+  width: 55%;
+  height: 420px;
+  background-image: url("project.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Cards Container */
+.cards {
+  position: absolute;
+  right: 0;
+  top: -60px; 
+  width: 55%;
+}
+
+/* Card */
+.card {
+  background: #174a4a;
+  color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+/* Text */
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.card p {
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cards {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .vision-image {
+    width: 100%;
+    height: 300px;
+  }
+}
