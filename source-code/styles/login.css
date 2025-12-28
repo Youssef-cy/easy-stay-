@@ -1,0 +1,293 @@
+/* 🎨========================
+   Global Variables
+==========================*/
+:root {
+  --primary-color: #C3AF69;
+  --primary-dark: #000;
+  --text-dark: #222;
+  --text-gray: #666;
+  --bg-light: #fff;
+  --bg-gray: #f7f9fc;
+  --border-color: #ddd;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-strong: rgba(0, 0, 0, 0.3);
+  --hover-button:#1B4D4D;;
+  --radius: 25px;
+  --transition: 0.3s;
+  --font-main: 'Poppins', sans-serif;
+}
+
+/* 🌐========================
+   Global Reset
+==========================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-gray);
+}
+
+/* 🧱========================
+   Container
+==========================*/
+.container {
+  display: flex;
+  width: 900px;
+  height: 600px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 10px 25px var(--shadow);
+  background: var(--bg-light);
+}
+
+.rememberMe{
+  color: white;
+  accent-color: var(--primary-color) ;
+}
+
+
+/* ========================
+   Login Box
+==========================*/
+.login-box {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-box h1 {
+  margin-top: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.login-box p {
+  color: var(--text-gray);
+  margin-bottom: 30px;
+}
+
+/* ========================
+   Inputs & Selects
+==========================*/
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  outline: none;
+  transition: var(--transition);
+  font-size: 15px;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+}
+
+/* Dropdown Custom Arrow */
+.input-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='black' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 18px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+.input-group select:hover {
+  border-color: var(--primary-color);
+}
+
+/* ========================
+   Password Field
+==========================*/
+.password-group {
+  position: relative;
+}
+
+.password-group input {
+  padding-right: 48px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.15s;
+}
+
+.toggle-password:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ========================
+   Options & Buttons
+==========================*/
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+
+.options a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary-color);
+  color: var(--bg-light);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.login-btn:hover {
+  background: var(--hover-button);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 10px 8px 15px var(--shadow-strong);
+}
+
+/* ========================
+   Divider
+==========================*/
+.divider {
+  text-align: center;
+  position: relative;
+  margin: 20px 0;
+  color: #888;
+}
+
+.divider span {
+  background: var(--bg-light);
+  padding: 0 10px;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: var(--border-color);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+/* ========================
+   Social Buttons
+==========================*/
+.apple-btn,
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.apple-btn {
+  background: var(--primary-dark);
+  color: var(--bg-light);
+  border: none;
+}
+
+.google-btn {
+  border: 1px solid var(--border-color);
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.google-btn:hover,
+.apple-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px var(--shadow);
+}
+
+/* ========================
+   Image Side
+==========================*/
+.image-side {
+  flex: 1;
+  background: url('/images/login\ image.jpeg') no-repeat center/cover;
+}
+
+/* ========================
+   Tabs
+==========================*/
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ========================
+   Responsive
+==========================*/
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .toggle-password {
+    right: 6px;
+  }
+
+  .image-side {
+    height: 250px;
+  }
+}

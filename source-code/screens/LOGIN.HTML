@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="/styles/login.css" />
+  <script defer src="/scripts/login.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h1>Welcome Back</h1>
+      <p>Please sign in to your account</p>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="tab-content active">
+        <div class="input-group">
+          <input type="text" id="email" placeholder="Email" required />
+        </div>
+
+        <div class="password-group input-group">
+          <input type="password" id="password" placeholder="Password" required />
+          <button class="toggle-password" type="button">
+            <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+              stroke="black" stroke-width="1.5">
+              <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </button>
+        </div>
+
+
+        <div class="options">
+          <label><input type="checkbox" id="rememberMe" class="rememberMe" > Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="login-btn">Sign In</button>
+
+        <div class="divider"><span>or continue with</span></div>
+        <button type="button" class="apple-btn"> Sign in with Apple</button>
+        <button type="button" class="google-btn">G Sign in with Google</button>
+      </form>
+
+      <!-- Sign Up Form -->
+      <div id="signup" class="tab-content">
+        <div class="input-group">  
+          <input type="text" placeholder="Full Name" />
+        </div>
+        <div class="input-group">
+          <input type="email" placeholder="Email" />
+        </div>
+        <div class="password-group input-group">
+          <input type="password" placeholder="Password" />
+          <button class="toggle-password" type="button">👁</button>
+        </div>
+        <button class="login-btn">Sign Up</button>
+      </div>
+    </div>
+
+    <div class="image-side"></div>
+  </div>
+</body>
+
+</html>
