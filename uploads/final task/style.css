@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    background-color:white;
+}
+.parent{
+    padding: 40px;
+}
+.image{
+    position: relative;
+    width: 60%;
+    margin-left: 45%;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.text{
+    position: absolute;
+    left: -400px;
+    top: 40%;
+    padding: 25px;
+    width: 350;
+    border: 15px solid #1B4D4D;;
+    background-color:   #1B4D4D;;
+    text-align: center;
+    top: 90px;
+    margin-bottom: 100px;
+}
+p{
+    font-size: 20px;
+    color: white;
+}
+.thank{
+    margin-top: 80px;
+    text-align: center;
+
+}
+h1{
+    font-size: 90px;
+    color: rgba(161, 144, 43, 0.747);
+    font-weight: 500px;
+    font-size: 150px;
+}
