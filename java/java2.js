@@ -9,7 +9,7 @@ function readMore(btn) {
     moreText.style.display = "none";
   } else {
     dots.style.display = "none";
-    btn.innerHTML = "Read less➡️";
+    btn.innerHTML = "➡️Read less";
     moreText.style.display = "inline";
   }
 }

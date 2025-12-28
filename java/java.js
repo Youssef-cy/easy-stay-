@@ -1,4 +1,4 @@
-const img = ["/imgPicture3.png", "/imgPicture1.jpeg", "/img/Picture2.jpeg","img/Picture5.png","img/Picture6.png","img/Picture7.png"];
+const img = ["/img/Picture3.png", "/img/Picture1.jpeg", "/img/Picture2.jpeg","/img/Picture5.png","/img/Picture6.png","/img/Picture7.png"];
     let index = 0;
     const imge = document.getElementById("changingImage");
 
