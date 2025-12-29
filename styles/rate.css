@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.reviews-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actions a {
+  color: #2cbeeb;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.outline-btn {
+  border: 1px solid#2cbeeb;
+  background: transparent;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.solid-btn {
+  background: #2cbeeb;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.reviews-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.overall h1 {
+  font-size: 48px;
+  margin: 0;
+  color: black;
+}
+
+.stars {
+  color: #2cbeeb;
+  font-size: 18px;
+}
+
+.rating-bars .bar {
+  display: grid;
+  grid-template-columns: 80px 1fr 50px;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.progress {
+  background: #eee;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress div {
+  height: 100%;
+  background: #2cbeeb;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.cat {
+  display: grid;
+  grid-template-columns: 80px 1fr 40px;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .reviews-content {
+    grid-template-columns: 1fr;
+  }
+}
