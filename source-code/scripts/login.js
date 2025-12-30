@@ -1,70 +1,54 @@
 const loginForm = document.getElementById("loginForm");
+const nameInputs = document.querySelectorAll(".name");
+const firstNameInput = nameInputs[0];
+const lastNameInput = nameInputs[1];
+const phoneInput = document.getElementById("phone");
+const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-const toggleBtn = document.querySelector(".toggle-password");
-const eyeIcon = document.getElementById("eyeIcon");
-
+const countryInput = document.getElementById("country");
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const passwordPattern =
-  /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+const phonePattern = /^\d{10,15}$/;
 
-// 👁 Toggle password visibility
-toggleBtn.addEventListener("click", () => {
-  const type =
-    passwordInput.getAttribute("type") === "password" ? "text" : "password";
-  passwordInput.setAttribute("type", type);
-
-  if (type === "text") {
-    eyeIcon.innerHTML = `
-      <path d="M1 1l22 22" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-6 0-10-7-10-7a18.6 18.6 0 0 1 5.06-6.06" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    `;
-  } else {
-    eyeIcon.innerHTML = `
-      <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="12" cy="12" r="3" stroke="#000" stroke-width="1.5"/>
-    `;
-  }
-});
-
-// ✅ Form submit
+//validation
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const email = document.getElementById("email").value.trim();
+  const firstName = firstNameInput.value.trim();
+  const lastName = lastNameInput.value.trim();
+  const phone = phoneInput.value.trim();
+  const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
-  const remember = document.getElementById("rememberMe")?.checked;
-
-  if (!emailPattern.test(email)) {
-    alert("❌ Please enter a valid email address.");
-    return;
-  }
-
+  const country = countryInput.value;
+  
+  if (!firstName || !lastName) return alert("❌ Please enter first and last name");
+  if (!phonePattern.test(phone)) return alert("❌ Phone must be 10–15 digits");
+  if (!emailPattern.test(email)) return alert("❌ Invalid email address");
   if (!passwordPattern.test(password)) {
-    alert(
-      "❌ Password must be at least 8 characters and include:\n• 1 uppercase letter\n• 1 number\n• 1 special character"
-    );
-    return;
+    return alert("❌ Password must be 8+ chars, 1 uppercase, 1 number, 1 special char");
   }
+  if (!country) return alert("❌ Please select a country");
 
-  const message = document.getElementById("message");
+
+  //api call
+  const payload = { firstName, lastName, phone, email, password, country };
 
   try {
     const res = await fetch("http://localhost:3000/add-test", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify(payload),
     });
 
     const data = await res.json();
-
     if (data.success) {
-      loginForm.reset(); // clear form
-      alert("✅ Login successful!\nRemember me: " + (remember ? "Yes" : "No"));
+      alert("✅ Signup successful");
+      loginForm.reset();
     } else {
-      message.textContent = `Failed: ${data.error || "Unknown error"}`;
+      alert("❌ Server error: " + (data.error || "Unknown error"));
     }
   } catch (err) {
-    console.error("Fetch error:", err);
-    message.textContent = "Error connecting to server.";
+    console.error(err);
+    alert("❌ Cannot connect to server");
   }
 });
