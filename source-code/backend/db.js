@@ -1,6 +1,4 @@
-import oracledb from 'oracledb';
-let email = "alpha112534@gmail.com";
-let password = 'Yy@1512009';
+import oracledb from "oracledb";
 
 async function createConnection() {
   return await oracledb.getConnection({
@@ -14,36 +12,15 @@ export async function runQuery(query, binds = []) {
   let connection;
   try {
     connection = await createConnection();
-    
-    const result = await connection.execute(query, binds);
-    await connection.commit(); 
-    
-    console.log(result.rows);
-    return result.rows || result;
+
+    const result = await connection.execute(query, binds, { autoCommit: true });
+    console.log("Rows affected:", result.rowsAffected);
+    return result;
+
   } catch (err) {
-    console.error(err);
-    if (connection) {
-      try {
-        await connection.rollback();
-      } catch (rollbackErr) {
-        console.error("Rollback failed:", rollbackErr);
-      }
-    }
-    return null;
+    console.error("runQuery error:", err);
+    throw err;
   } finally {
-    if (connection) {
-      try {
-        await connection.close();
-      } catch (err) {
-        console.error(err);
-      }
-    }
+    if (connection) await connection.close();
   }
 }
-
-await runQuery(
-  `INSERT INTO users VALUES (:1, :2)`, 
-  [email, password]
-);
-
-runQuery("select * from users")

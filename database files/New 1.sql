@@ -1,0 +1,31 @@
+-- 1. ????? ????????
+CREATE USER WEB_USER IDENTIFIED BY password123;
+
+-- 2. ????? ?????? ???????
+GRANT CONNECT TO WEB_USER;
+
+-- 3. ????? ?????? SELECT ??? ???? ????
+GRANT SELECT ON EMPLOYEES TO WEB_USER;
+
+
+SELECT sys_context('USERENV','CON_NAME') AS current_container FROM dual;
+
+SELECT PDB_NAME, STATUS FROM DBA_PDBS;
+
+
+ALTER SESSION SET CONTAINER = ORCLPDB;
+
+CREATE USER WEB_USER IDENTIFIED BY password123;
+GRANT CONNECT TO WEB_USER;
+GRANT SELECT ON EMPLOYEES TO WEB_USER;
+
+
+SELECT owner, table_name 
+FROM all_tables 
+WHERE table_name = 'EMPLOYEES';
+
+create table assem(
+id number primary key);
+
+
+GRANT SELECT ON HR.EMPLOYEES TO WEB_USER;

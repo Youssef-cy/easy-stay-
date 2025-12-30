@@ -1,6 +1,3 @@
-import { insertData } from "./testlink.js";
-
-
 const loginForm = document.getElementById("loginForm");
 const passwordInput = document.getElementById("password");
 const toggleBtn = document.querySelector(".toggle-password");
@@ -10,7 +7,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordPattern =
   /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-// 👁 تبديل رؤية الباسورد
+// 👁 Toggle password visibility
 toggleBtn.addEventListener("click", () => {
   const type =
     passwordInput.getAttribute("type") === "password" ? "text" : "password";
@@ -29,12 +26,13 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
-// ✅ التحقق من البيانات وتوجيه حسب الدور
-loginForm.addEventListener("submit", function (e) {
+// ✅ Form submit
+loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const email = document.getElementById("email").value.trim();
   const password = passwordInput.value.trim();
+  const remember = document.getElementById("rememberMe")?.checked;
 
   if (!emailPattern.test(email)) {
     alert("❌ Please enter a valid email address.");
@@ -48,13 +46,25 @@ loginForm.addEventListener("submit", function (e) {
     return;
   }
 
+  const message = document.getElementById("message");
 
+  try {
+    const res = await fetch("http://localhost:3000/add-test", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
 
-  const remember = document.getElementById("rememberMe")?.checked;
+    const data = await res.json();
 
-  alert("✅ Login successful!\nRole: " + role + "\nRemember me: " + (remember ? "Yes" : "No"));
-  
+    if (data.success) {
+      loginForm.reset(); // clear form
+      alert("✅ Login successful!\nRemember me: " + (remember ? "Yes" : "No"));
+    } else {
+      message.textContent = `Failed: ${data.error || "Unknown error"}`;
+    }
+  } catch (err) {
+    console.error("Fetch error:", err);
+    message.textContent = "Error connecting to server.";
+  }
 });
-
-insertData("abdohosaam@gmail.com" , 'password123')
-
