@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <link rel="stylesheet" href="/styles/signin.css">
+    <script src="/scripts/signin.js" defer></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="login-box">
+      <h1>Welcome Back</h1>
+      <p>Please SignIn To Your account</p>
+
+      <form id="loginForm">
+        <div class="input-group">
+        
+
+          <input id="email" class="input" type="email" placeholder="Email" required />
+          <input id="password" class="input" type="password" placeholder="Password" required />
+        </div>
+
+        <div class="options">
+          <label>
+            <input type="checkbox" class="rememberMe" /> Remember me
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="login-btn">Sign IN</button>
+
+        <div class="divider"><span>or continue with</span></div>
+
+        <button type="button" class="apple-btn"> Sign Up with Apple</button>
+        <button type="button" class="google-btn">G Sign Up with Google</button>
+      </form>
+    </div>
+
+    <div class="image-side"></div>
+  </div>
+
+</body>
+</html>
