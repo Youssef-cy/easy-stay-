@@ -99,3 +99,54 @@ button:hover {
     font-size: 14px;
     text-align: center;
 }
+
+
+
+/* Tablets */
+@media (max-width: 768px) {
+    .payment-card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    .payment-card {
+        width: 95%;
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .card-types {
+        flex-direction: column;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .secure {
+        font-size: 13px;
+    }
+}
+
