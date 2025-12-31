@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+h2 {
+
+    margin-top: 30px;
+    display: flex;
+    margin-left: 30px;
+    color: black;
+    font-style: italic;
+    font-family: 'Georgia', 'Times', 'Times New Roman', serif;
+}
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+
+}
+
+.child-img {
+    box-shadow: 0 10px 10px rgb(165, 165, 165);
+    transition: 0.3s;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.child-img:hover {
+    transform: scale(1.1);
+}
+
+.child-img h3 {
+    padding: 10px;
+}
+
+.child-img p {
+    line-height: 1.6em;
+    font-style: italic;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.more {
+    display: none;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    background-color: #ffffff;
+    border: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    margin-top: 0;
+}
+
+@media (max-width:767px) {
+    h2 {
+
+        margin-top: 30px;
+        display: flex;
+        margin-left: 30px;
+        color: black;
+        font-style: italic;
+        font-family: 'Georgia', 'Times', 'Times New Roman', serif;
+    }
+
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+
+    }
+
+    .child-img {
+        box-shadow: 0 10px 10px rgb(165, 165, 165);
+        transition: 0.3s;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .child-img:hover {
+        transform: scale(1.1);
+    }
+
+    .child-img h3 {
+        padding: 10px;
+    }
+
+    .child-img p {
+        line-height: 1.6em;
+        font-style: italic;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        padding: 10px;
+    }
+
+    img {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .more {
+        display: none;
+    }
+
+    button {
+        width: 100px;
+        height: 40px;
+        background-color: #ffffff;
+        border: #ffffff;
+        color: rgb(0, 0, 0);
+        border-radius: 20px;
+        margin-top: 0;
+    }
+}
