@@ -13,3 +13,27 @@ function readMore(btn) {
     moreText.style.display = "inline";
   }
 }
+
+
+const parent = document.querySelector(".parent");
+const cards = document.querySelectorAll(".child-card");
+
+let index = 0;
+const visibleCards = 3;
+const cardWidth = 310;
+
+function nextSlide() {
+    if (index < cards.length - visibleCards) {
+        index++;
+        parent.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+}
+
+function prevSlide() {
+    if (index > 0) {
+        index--;
+        parent.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+}
+
+
