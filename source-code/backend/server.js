@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { runQuery } from "./db.js"; // دالة تنفيذ الاستعلامات على Oracle
+import { runQuery } from "./config/db.js"; // دالة تنفيذ الاستعلامات على Oracle
 
 const app = express();
 app.use(cors({ origin: "http://127.0.0.1:5501" }));
