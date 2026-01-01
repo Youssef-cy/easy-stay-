@@ -1,9 +1,10 @@
+--CRAETE TABLE TRANSACTIONS--
 CREATE TABLE transactions (
   transactions_id NUMBER PRIMARY KEY,
   amount NUMBER(12,2) NOT NULL
 );
 
-
+--CREATE SEQUENCE-
 CREATE SEQUENCE transactions_seq
 START WITH 1
 INCREMENT BY 1
@@ -11,7 +12,7 @@ MINVALUE 1
 NOCACHE
 NOCYCLE;
 
-
+--INSERT DATA--
 INSERT INTO transactions VALUES (transactions_seq.NEXTVAL, 450.75);
 INSERT INTO transactions VALUES (transactions_seq.NEXTVAL, 1299.99);
 INSERT INTO transactions VALUES (transactions_seq.NEXTVAL, 2750.50);
@@ -25,7 +26,7 @@ INSERT INTO transactions VALUES (transactions_seq.NEXTVAL, 3325.60);
 INSERT INTO transactions VALUES (transactions_seq.NEXTVAL, 15000.00);
 INSERT INTO transactions VALUES (transactions_seq.NEXTVAL, 875.30);
 
-
+--CREATE FUNCTION TOTAL FOR REVENUE--
 CREATE OR REPLACE FUNCTION get_total_revenue
 RETURN NUMBER
 IS
@@ -43,7 +44,7 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE(get_total_revenue);
 END;
 
-
+--CREATE PROCEDURE FOR ADD TRANSACTION--
 CREATE OR REPLACE PROCEDURE add_transaction (p_amount IN NUMBER) IS
 BEGIN
     INSERT INTO transactions (transactions_id, amount)
@@ -61,7 +62,7 @@ BEGIN
     add_transaction(500);
 END;
 
-
+--QUERIES FOR MAX BOOKING_COST--
 SELECT * FROM reservations
 WHERE booking_cost =(SELECT MAX(booking_cost)
 FROM reservations
@@ -69,7 +70,7 @@ FROM reservations
     
     
     
-    
+  --QUERIE FOR JOIN--  
 SELECT 
 u.user_id,u.user_name,
 COUNT (r.reservation_id)AS reservation_count
@@ -82,3 +83,24 @@ u.user_name
 ORDER BY 
 u.user_id;
 
+--CREATE FUNCTION FOR COUNT --
+CREATE OR REPLACE FUNCTION get_active_guests
+RETURN NUMBER
+IS
+    v_count NUMBER;
+BEGIN
+    SELECT COUNT(*)
+    INTO v_count
+    FROM reservations
+    WHERE SYSDATE BETWEEN check_in_date AND check_out_date;
+    RETURN v_count;
+EXCEPTION
+    WHEN OTHERS THEN RETURN 0;
+END;
+
+DECLARE
+    v_guests NUMBER;
+BEGIN
+    v_guests := get_active_guests;
+    DBMS_OUTPUT.PUT_LINE('Active Guests : ' || v_guests);
+END;
