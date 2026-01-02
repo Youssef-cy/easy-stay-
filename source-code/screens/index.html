@@ -8,19 +8,24 @@
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
-    <script src="/scripts/script.js"></script>
+    <script src="/scripts/script.js" defer></script>
 </head>
 <header>
     <nav>
         <div class="logo">EASYSTAY</div>
-        <ul>
+    <div class="right">
+            <ul>
        <li><a href="">Home</a></li>
        <li><a href="">Destinations</a></li>
        <li><a href="">Reviews</a></li>
        <li><a href="">News</a></li>
        <li><a href="">Contact</a></li>
-        </ul>
+    </ul>
+    <button class="nav_btn" onclick="loginForm()">signin</button>
+    </div>
     </nav>
 </header>
 
@@ -29,46 +34,164 @@
 
        
        <div class="filter_section">
+    <h1 class="filter_title">Good Morning!</h1>
+    <p class="filter_p">Explore beautiful places in the world with Easystay</p>
 
-        <h1 class="filter_title">
-            Good Morning!
-        </h1>
-           <p class="filter_p">Explore beautiful places in the world with Acenda</p>
-      
-           <div class="filter_contant">
-            <div class="content">
-                <div class="icon">📍</div>
-                <div class="filter"><h1>location</h1>
-                <input type="text" placeholder="Add destination">
-                </div>
-            </div>
-            <div class="line"></div>
-            <div class="content">
-                <div class="icon">📆</div>
-                <div class="filter"><h1>Check in</h1>
-                    <input type="text" placeholder="Add dates">
-                </div>
-            </div>
-            <div class="line"></div>
-            <div  class="content">
-                <div class="icon">📆</div>
-                <div class="filter"><h1>Check out</h1>
-                    <input type="text" placeholder="Add dates">
-                </div>
-                <div class="line-last"></div>
-            </div>
-            <div  class="content">
-                <div class="icon"></div>
-                <div class="filter"><h1>Guests</h1>
-                    <input type="text" placeholder="Add guests">
-                </div>
-                <div class="search">🔍</div>
-        </div>
-    </div>
-    
+    <div class="filter_contant">
+     <div class="content">
+  <div class="icon">
+    <i class="fa-solid fa-location-dot"></i>
+  </div>
+  <div class="filter">
+    <h4>Location</h4>
+    <input type="text" placeholder="Add destination">
+  </div>
+</div>
+
+<div class="line"></div>
+
+<div class="content">
+  <div class="icon">
+    <i class="fa-solid fa-calendar-days"></i>
+  </div>
+  <div class="filter">
+    <h4>Check in</h4>
+    <input type="text" placeholder="Add dates">
+  </div>
+</div>
+
+<div class="line"></div>
+
+<div class="content">
+  <div class="icon">
+    <i class="fa-solid fa-calendar-days"></i>
+  </div>
+  <div class="filter">
+    <h4>Check out</h4>
+    <input type="text" placeholder="Add dates">
+  </div>
+</div>
+
+<div class="line"></div>
+
+<div class="content">
+  <div class="filter">
+    <h4>Guests</h4>
+    <input type="text" placeholder="Add guests">
+  </div>
+  <div class="search">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+</div>
+
+
+  </div>
 </main>
    
- 
+ <section class="why-section">
+  <h2 class="why-title">WHY CHOOSE US?</h2>
+
+  <div class="why-cards">
+    <div class="why-card">
+      <div class="why-image">
+        <img src="/images/Frame 1157.png" alt="">
+      </div>
+      <h3>Competitive prices</h3>
+      <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-image">
+        <img src="/images/Frame 1158.png" alt="">
+      </div>
+      <h3>Secure booking</h3>
+      <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="why-image">
+        <img src="/images/Frame 1159.png" alt="">
+      </div>
+      <h3>Seamless experience</h3>
+      <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+  </div>
+</section>
+<section class="explore-section">
+  <h2 class="explore-title">EXPLORE MALDIVES</h2>
+
+  <p class="explore-desc">
+    Lorem ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto praesentium nemo, magni officia perspiciatis numquam et reiciendis placeat vel temporibus tempora repellendus maxime, distinctio totam laborum quo. Nisi, inventore labore!
+  </p>
+
+  <button class="explore-btn">See all</button>
+
+  <div class="explore-main-image">
+  
+  </div>
+
+  <div class="explore-places">
+    <div class="explore-place">
+      <img src="/images/Rectangle 53 (1).png" alt="">
+      <p>Azure Haven</p>
+    </div>
+
+    <div class="explore-place">
+      <img src="/images/Rectangle 54.png" alt="">
+      <p>Serene sanctuary</p>
+    </div>
+
+    <div class="explore-place">
+      <img src="/images/Rectangle 54 (1).png" alt="">
+      <p>Verdant vista</p>
+    </div>
+  </div>
+</section>
+   <!-- Title + See More -->
+    <div class="title">
+        <h1>Feature News</h1>
+        <a href="card.html" class="see-more">See More</a>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+
+        <div class="card">
+            <img src="/images/Delicious restaurant.jpg" alt="">
+            <div class="content">
+                <h2><i class="fa-solid fa-calendar-days"></i> February 20, 2024</h2>
+                <h3>Delicious restaurant at Hanalei Bay</h3>
+                <p>
+                    Enjoy an unforgettable dining experience where fresh ingredients, rich flavors, and elegant presentation come together. This restaurant offers a warm atmosphere, delicious meals, and a perfect place to relax and enjoy quality time with friends or family.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/images/Top most.jpg" alt="">
+            <div class="content">
+                <h2><i class="fa-solid fa-calendar-days"></i> February 20, 2024</h2>
+                <h3>Top 10 most beautiful check-in spots</h3>
+                <p>
+                    Discover some of the most beautiful places around the world, known for their natural beauty and iconic views. These destinations offer breathtaking landscapes, unique cultures, and unforgettable moments worth capturing.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/images/navigo beach.jpg" alt="">
+            <div class="content">
+                <h2><i class="fa-solid fa-calendar-days"></i> February 20, 2024</h2>
+                <h3>Top 5 newest services at Navagio Beach</h3>
+                <p>
+                    This beach provides high-quality services designed for comfort and relaxation. Visitors can enjoy clean facilities, comfortable seating, food services, and a calm atmosphere that makes every visit enjoyable and stress-free.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
     
 </body>
 

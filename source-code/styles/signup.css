@@ -2,9 +2,8 @@
 
 /* Variables */
 :root {
-  --primary-color: #C3AF69;
+   --primary-color: rgb(30, 159, 214);
   --primary-dark: #000;
-  --hover-button: #1B4D4D;
   --text-dark: #222;
   --text-gray: #666;
   --bg-light: #fff;
@@ -135,7 +134,7 @@ select {
 }
 
 .login-btn:hover {
-  background: var(--hover-button);
+  background: var(--primary-color);
   transform: translateY(-5px);
   box-shadow: 0 8px 15px var(--shadow-strong);
 }

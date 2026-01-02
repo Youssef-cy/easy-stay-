@@ -1,4 +1,4 @@
 function loginForm (){
-window.location.href = "LOGIN.HTML"
+window.location.href = "signin.HTML"
 }
 

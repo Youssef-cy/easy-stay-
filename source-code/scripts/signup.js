@@ -34,7 +34,7 @@ loginForm.addEventListener("submit", async (e) => {
   const payload = { firstName, lastName, phone, email, password, country };
 
   try {
-    const res = await fetch("http://localhost:3000/add-test", {
+    const res = await fetch("http://localhost:3000/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

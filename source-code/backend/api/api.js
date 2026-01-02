@@ -1,17 +1,10 @@
-async function get_data (){
-const url = 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=304554';
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': 'bf6742816fmsh0b900e68bf287e4p1d3e4fjsn98a21b742fae',
-		'x-rapidapi-host': 'tripadvisor16.p.rapidapi.com'
-	}
-};
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.json();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}}
+fetch('http://localhost:3000/api')  // Replace with your API endpoint
+  .then(response => {
+    if (!response.ok) throw new Error('API error');
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);  // Handle your API response data
+    // Update UI, e.g., document.getElementById('result').innerHTML = JSON.stringify(data);
+  })
+  .catch(error => console.error('Fetch error:', error));

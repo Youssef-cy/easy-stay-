@@ -31,8 +31,7 @@ loginForm.addEventListener("submit", async (e) => {
     if (data.success) {
       alert("✅ Login successful, Welcome " + data.user.firstName);
       loginForm.reset();
-      // هنا ممكن تعمل redirect للصفحة الرئيسية بعد تسجيل الدخول
-      // window.location.href = "/dashboard.html";
+      
     } else {
       alert("❌ " + (data.error || "Server error"));
     }
@@ -41,3 +40,8 @@ loginForm.addEventListener("submit", async (e) => {
     alert("❌ Cannot connect to server");
   }
 });
+
+
+function moveToSignUp (){
+  window.location.href = "signup.html"
+}

@@ -8,6 +8,7 @@ CREATE TABLE users (
     email        VARCHAR2(100) UNIQUE,
     password     VARCHAR2(200)
 );
+drop table users;
 
 drop sequence user_seq;
 CREATE SEQUENCE user_seq START WITH 1 INCREMENT BY 1 nocycle;
@@ -286,3 +287,57 @@ SELECT u.first_name, COUNT(s.service_id) AS booking_count
 FROM users u
 LEFT JOIN service s ON u.user_id = s.user_id
 GROUP BY u.first_name;
+
+
+
+--------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION get_total_users
+RETURN NUMBER
+IS
+  v_total_users NUMBER;
+BEGIN
+  SELECT COUNT(*)
+  INTO v_total_users
+  FROM users;
+
+  RETURN v_total_users;
+
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Error while counting users');
+    RETURN -1; --if not found users 
+END;
+
+
+
+begin
+dbms_output.put_line(get_total_users());
+end;
+
+
+-------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION get_reservation_balance (
+  p_reservation_id IN reservations.reservation_id%TYPE
+)
+RETURN NUMBER
+IS
+  v_balance reservations.balance_amount%TYPE;
+BEGIN
+  SELECT balance_amount
+  INTO v_balance
+  FROM reservations
+  WHERE reservation_id = p_reservation_id;
+
+  RETURN v_balance;
+
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('Reservation not found');
+    RETURN -1; -- reservation does not exist
+
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Error while retrieving reservation balance');
+    RETURN -2; -- general error
+END;
+/
