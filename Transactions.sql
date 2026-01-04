@@ -70,7 +70,7 @@ FROM reservations
     
     
     
-  --QUERIE FOR JOIN--  
+  --QUERIE left JOIN--  
 SELECT 
 u.user_id,u.user_name,
 COUNT (r.reservation_id)AS reservation_count
