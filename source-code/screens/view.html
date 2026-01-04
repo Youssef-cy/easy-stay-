@@ -1,77 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hotel Deals</title>
-    <link rel="stylesheet" href="/styles/view.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Search</title>
+  <link rel="stylesheet" href="/styles/view.css">
+  <script src="/scripts/view.js" defer></script>
 </head>
+
 <body>
+
+<nav>
+  <div class="navbar">
+    <div class="logo">EasyStay</div>
+    <ul class="nav-links">
+      <li>Rewards</li>
+      <li>Discover</li>
+      <li>Trips</li>
+      <li>Review</li>
+    </ul>
+  </div>
+
+  <div class="hero">
+    <div class="overlay">
+      <h1>Find hotels travelers love</h1>
+      <!-- ✅ أضفنا id -->
+      <input 
+        id="searchInput"
+        class="search"
+        type="text"
+        placeholder="Hotel name or destination"
+      >
+    </div>
+  </div>
+</nav>
+
 <section class="features">
+  <div class="feature-card">
+    <img src="/images/Screenshot 2025-12-21 203432.png">
+    <h3>Search simply</h3>
+    <p>Easily search through <strong>millions</strong> of hotels.</p>
+  </div>
 
-    <div class="feature-card">
-        <img src="/images/Screenshot 2025-12-21 203432.png" alt="">
-        <h3>Search simply</h3>
-        <p>
-            Easily search through <strong>millions</strong> of hotels in seconds.
-        </p>
-    </div>
+  <div class="feature-card">
+    <img src="/images/Screenshot 2025-12-21 203453.png">
+    <h3>Compare confidently</h3>
+    <p>Compare prices from over <strong>100</strong> sites.</p>
+  </div>
 
-    <div class="feature-card">
-        <img src="/images/Screenshot 2025-12-21 203453.png" alt="">
-        <h3>Compare confidently</h3>
-        <p>
-            Compare hotel prices from over <strong>100</strong> sites at once.
-        </p>
-    </div>
-
-    <div class="feature-card">
-        <img src="/images/Screenshot 2025-12-21 203529.png" alt="">
-        <h3>Save big</h3>
-        <p>
-            Discover a <strong>great</strong> deal to book on our partner sites.
-        </p>
-    </div>
-
+  <div class="feature-card">
+    <img src="/images/Screenshot 2025-12-21 203529.png">
+    <h3>Save big</h3>
+    <p>Discover a <strong>great</strong> deal.</p>
+  </div>
 </section>
 
-<div class="cards">
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="">
-        <div class="card-body">
-            <h3>DoubleTree by Hilton</h3>
-            <p class="location">Doha, Qatar</p>
-            <span class="rate">9.0 Excellent</span>
-            <p class="price">$166 <small>per night</small></p>
-            <button>check deals</button>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="">
-        <div class="card-body">
-            <h3>Holiday Inn Cairo</h3>
-            <p class="location">Cairo, Egypt</p>
-            <span class="rate">9.0 Excellent</span>
-            <p class="price">$150 <small>per night</small></p>
-                        <button>check deals</button>
-
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="">
-        <div class="card-body">
-            <h3>Madinah Hilton</h3>
-            <p class="location">Medina, Saudi Arabia</p>
-            <span class="rate">8.7 Excellent</span>
-            <p class="price">$264 <small>per night</small></p>
-                        <button>check deals</button>
-
-        </div>
-    </div>
-
-</div>
+<div id="results" class="cards"></div>
 
 </body>
 </html>

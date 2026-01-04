@@ -44,6 +44,8 @@ loginForm.addEventListener("submit", async (e) => {
     if (data.success) {
       alert("✅ Signup successful");
       loginForm.reset();
+            window.location.href = 'view.html'
+
     } else {
       alert("❌ Server error: " + (data.error || "Unknown error"));
     }
