@@ -30,7 +30,7 @@ To use the application, follow these steps:
 2. Register for an account or log in to an existing account
 3. Search for hotels using the search bar
 4. View hotel details and book a room
-5. Manage your account and profile settings
+
 
 ## 📂 Project Structure
 ```
