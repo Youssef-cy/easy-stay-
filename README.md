@@ -4,7 +4,6 @@ The Hotel Booking Application is a comprehensive web-based platform designed to 
 ## 🚀 Features
 * User registration and login functionality
 * Hotel search and booking features
-* User account management and profile editing
 * Secure authentication and authorization using Express.js and Oracle Database
 * Responsive and user-friendly interface using HTML, CSS, and JavaScript
 * Integration with external APIs for hotel data and payment processing
