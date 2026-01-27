@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@google/genai": "^1.34.0",
+    "axios": "^1.13.2",
+    "cors": "^2.8.5",
+    "oracledb": "^6.10.0"
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Booking & Payment</title>
+        <link rel="stylesheet" href="/styles/payment.css">
+        <script src="/scripts/payment.js" defer></script>
+</head>
+<body>
+    <div class="cards-container">
+        <!-- Payment Card -->
+        <div class="card payment-card">
+            <h2>Payment Method</h2>
+            <p class="subtitle">Choose how you'd like to pay</p>
+
+            <h4>Select Card Type</h4>
+            <div class="card-types">
+                <div class="card-type active" onclick="selectCard(this)">Visa</div>
+                <div class="card-type" onclick="selectCard(this)">Mastercard</div>
+                <div class="card-type" onclick="selectCard(this)">Amex</div>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="1234 5678 9012 3456">
+                </div>
+
+                <div class="form-group">
+                    <label>Cardholder Name</label>
+                    <input type="text" placeholder="Name as it appears on card">
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input type="text" placeholder="MM/YY">
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" placeholder="123">
+                    </div>
+                </div>
+
+                <button type="button" class="confirm-btn" onclick="confirmPayment()">
+                    Confirm Payment • $285.00
+                </button>
+            </form>
+
+            <div class="secure">
+                🔒 Secure & Encrypted Transaction
+            </div>
+        </div>
+
+        <!-- Hotel Card -->
+        <div class="card hotel-card">
+            <div class="premium-badge">Premium</div>
+            <img src="" alt="Ocean View Luxury Resort" class="hotel-image">
+            
+            <h2>Ocean View Luxury Resort</h2>
+            <p class="hotel-subtitle">Deluxe Suite With Ocean View</p>
+            <div class="reviews">★ 4.8 • 248 reviews</div>
+
+            <div class="counter-group" data-type="nights">
+                <span class="counter-label">Nights</span>
+                <button class="counter-btn" onclick="changeValue('nights', -1)">−</button>
+                <span class="counter-value" id="nights">1</span>
+                <button class="counter-btn" onclick="changeValue('nights', 1)">+</button>
+            </div>
+
+            <div class="counter-group" data-type="rooms">
+                <span class="counter-label">Rooms</span>
+                <button class="counter-btn" onclick="changeValue('rooms', -1)">−</button>
+                <span class="counter-value" id="rooms">1</span>
+                <button class="counter-btn" onclick="changeValue('rooms', 1)">+</button>
+            </div>
+
+            <div class="counter-group" data-type="guests">
+                <span class="counter-label">Guests</span>
+                <button class="counter-btn" onclick="changeValue('guests', -1)">−</button>
+                <span class="counter-value" id="guests">1</span>
+                <button class="counter-btn" onclick="changeValue('guests', 1)">+</button>
+            </div>
+
+            <div class="price-section">
+                <div class="price-line">
+                    <span>250$ × <span id="nightstext">1</span> night × <span id="roomstext">1</span> room</span>
+                    <strong id="base-price">250$</strong>
+                </div>
+                <div class="price-line">
+                    <span>Taxes & fees</span>
+                    <strong>35$</strong>
+                </div>
+                <div class="total">Total <span id="total">285$</span></div>
+            </div>
+
+            <div class="included">
+                <h4>What's included:</h4>
+                <ul>
+                    <li>Breakfast buffet</li>
+                    <li>Free WiFi</li>
+                    <li>Private parking</li>
+                    <li>Infinity pool</li>
+                    <li>24/7 gym</li>
+                    <li>Free cancellation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Variables */
+:root {
+   --primary-color: rgb(30, 159, 214);
+  --primary-dark: #000;
+  --text-dark: #222;
+  --text-gray: #666;
+  --bg-light: #fff;
+  --bg-gray: #f7f9fc;
+  --border-color: #ddd;
+  --shadow: rgba(0,0,0,0.1);
+  --shadow-strong: rgba(0,0,0,0.3);
+  --radius: 25px;
+  --transition: 0.3s;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: var(--bg-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.container {
+  width: 900px;
+  height: 700px;
+  display: flex;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-light);
+  box-shadow: 0 10px 25px var(--shadow);
+}
+
+/* Login Box */
+.login-box {
+  flex: 1;
+  padding:20px 60px 60px 60px;
+}
+
+.login-box h1 {
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  margin-bottom: 30px;
+  color: var(--text-gray);
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.names {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.names .name,
+.input {
+  margin-bottom: 8px;
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  outline: none;
+  font-size: 15px;
+}
+
+.names .name {
+  flex: 1;
+}
+
+.input:focus,
+.name:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(195,175,105,0.5);
+}
+
+/* Select */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='black' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+}
+
+/* Options */
+.options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.options a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox */
+.rememberMe {
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Buttons */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.login-btn:hover {
+  background: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px var(--shadow-strong);
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  color: #888;
+}
+
+.divider span {
+  background: white;
+  padding: 0 10px;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--border-color);
+  z-index: -1;
+}
+
+/* Social buttons */
+.apple-btn,
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.apple-btn {
+  background: black;
+  color: white;
+  border: none;
+}
+
+.google-btn {
+  background: white;
+  border: 1px solid var(--border-color);
+}
+
+/* Image */
+.image-side {
+  flex: 1;
+  background: url('/images/login image.jpeg') center/cover no-repeat;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .image-side {
+    height: 250px;
+  }
+
+  .login-box {
+    padding: 30px 20px;
+  }
+}
